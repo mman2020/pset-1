@@ -114,11 +114,11 @@ public class ProblemSet1 {
          */
          final double SALARY = 117000;
          double biweekly = 117000/24;
-         final double FEDERAL_TAX = 0.76;
-         final double STATE_TAX = 0.9363;
-         final double CONTRIBUTION = 0.93;
-         double salaryContribution = CONTRIBUTION * biweekly;
-         double finalSalary = STATE_TAX * FEDERAL_TAX * salaryContribution;
+         final double FEDERAL_TAX = 0.24;
+         final double STATE_TAX = 0.0637;
+         final double CONTRIBUTION = 0.07;
+         double salaryContribution = (1-CONTRIBUTION) * biweekly;
+         double finalSalary = (1-STATE_TAX) * (1-FEDERAL_TAX) * salaryContribution;
          System.out.printf("\n" + currencyformat.format(finalSalary) + ".\n");
 
 
@@ -128,8 +128,13 @@ public class ProblemSet1 {
          * I am planning a class trip next month. How many buses do I need, and how many
          * people will be on the last bus?
          */
-
-
+         final int STUDENT_COUNT = 273;
+         final int TEACHER_COUNT = 28;
+         final int BUS_CAPACITY = 54;
+         int PEOPLE_COUNT = STUDENT_COUNT + TEACHER_COUNT;
+         int BUS_COUNT = (PEOPLE_COUNT/BUS_CAPACITY)+1;
+         int finalBusCount = PEOPLE_COUNT % BUS_CAPACITY;
+         System.out.println("\n" + BUS_COUNT + " buses are needed, with " + finalBusCount + " passengers on the last bus. \n");
 
         /*
          * Exercise 8.
@@ -144,6 +149,7 @@ public class ProblemSet1 {
          *
          * Are the years 2020, 2100, and 2400 leap years?
          */
+
 
 
 
