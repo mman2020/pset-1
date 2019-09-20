@@ -29,7 +29,7 @@ public class ProblemSet1 {
         double widthMM = width * inchToMillimeters;
         double area = lengthMM * widthMM;
         double areaRound = Math.round(area * 100.0)/100.0;
-        System.out.println("\n" + areaRound + " square millimeters." + "\n");
+        System.out.printf("\n%,.2f %s", areaRound, "square millimeters.\n");
 
         /*
          * Exercise 2.
@@ -41,7 +41,7 @@ public class ProblemSet1 {
          double widthCM = width * inchtoCentimeters;
          double perimeter = (lengthCM * 2) + (widthCM * 2);
          double perimeterRound = Math.round(perimeter * 100.0)/100.0;
-         System.out.println(perimeter + " centimeters." + "\n");
+         System.out.println("\n" + perimeter + " centimeters." + "\n");
 
         /*
          * Exercise 3.
@@ -62,16 +62,30 @@ public class ProblemSet1 {
          * what marking period grade will I get?
          */
 
-        // int homework1 = 88;
-        // int homework2 = 91;
-        // int homework3 = 0;
-        // int quiz1 = 84;
-        // int quiz2 = 89;
-        // int quiz3 = 93;
-        // int test1 = 74;
-        // int test2 = 87;
-        // int test3 = 82;
+        int homework1 = 88;
+        int homework2 = 91;
+        int homework3 = 0;
+        int quiz1 = 84;
+        int quiz2 = 89;
+        int quiz3 = 93;
+        int test1 = 74;
+        int test2 = 87;
+        int test3 = 82;
 
+        double averageHomework = (homework1 + homework2 + homework3);
+        double averageHomework2 = averageHomework/3;
+        double homeworkWeight = 0.15;
+        double finalHomework = averageHomework2 * homeworkWeight;
+        double averageQuiz = (quiz1 + quiz2 + quiz3);
+        double averageQuiz2 = averageQuiz/3;
+        double quizWeight = 0.35;
+        double finalQuiz = averageQuiz2 * quizWeight;
+        double averageTest = (test1 + test2 + test3);
+        double averageTest2 = averageTest/3;
+        double testWeight = 0.5;
+        double finalTest = testWeight * averageTest2;
+        double finalGrade = Math.round((finalHomework + finalTest + finalQuiz)*100.0)/100.0;
+        System.out.println(finalGrade + "%\n");
 
 
         /*
