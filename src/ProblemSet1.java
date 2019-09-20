@@ -11,7 +11,7 @@
  * Work through these exercises on your own. Experiment, make mistakes, ask
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
-
+import java.text.NumberFormat;
 public class ProblemSet1 {
 
     public static void main(String[] args) {
@@ -22,11 +22,11 @@ public class ProblemSet1 {
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
 
-        double length = 8.5;
-        double width = 11;
-        double inchToMillimeters = 25.4;
-        double lengthMM = length * inchToMillimeters;
-        double widthMM = width * inchToMillimeters;
+        final double LENGTH = 8.5;
+        final double WIDTH = 11;
+        final double INCH_TO_MILLIMETERS = 25.4;
+        double lengthMM = LENGTH * INCH_TO_MILLIMETERS;
+        double widthMM = WIDTH * INCH_TO_MILLIMETERS;
         double area = lengthMM * widthMM;
         double areaRound = Math.round(area * 100.0)/100.0;
         System.out.printf("\n%,.2f %s", areaRound, "square millimeters.\n");
@@ -36,9 +36,9 @@ public class ProblemSet1 {
          *
          * What is the perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper?
          */
-         double inchtoCentimeters = 2.54;
-         double lengthCM = length * inchtoCentimeters;
-         double widthCM = width * inchtoCentimeters;
+         final double INCH_TO_CENTIMETERS = 2.54;
+         double lengthCM = LENGTH * INCH_TO_CENTIMETERS;
+         double widthCM = WIDTH * INCH_TO_CENTIMETERS;
          double perimeter = (lengthCM * 2) + (widthCM * 2);
          double perimeterRound = Math.round(perimeter * 100.0)/100.0;
          System.out.println("\n" + perimeter + " centimeters." + "\n");
@@ -49,8 +49,8 @@ public class ProblemSet1 {
          * What is the length of the diagonal (in inches) between two corners on an 8.5-
          * by-11-inch sheet of paper?
          */
-         double widthDouble = width * width;
-         double lengthDouble = length * length;
+         double widthDouble = WIDTH * WIDTH;
+         double lengthDouble = LENGTH * LENGTH;
          double diagonal = Math.round(java.lang.Math.sqrt(lengthDouble + widthDouble)*100.0)/100.0;
          System.out.println(diagonal + " inches. \n");
 
@@ -62,28 +62,28 @@ public class ProblemSet1 {
          * what marking period grade will I get?
          */
 
-        int homework1 = 88;
-        int homework2 = 91;
-        int homework3 = 0;
-        int quiz1 = 84;
-        int quiz2 = 89;
-        int quiz3 = 93;
-        int test1 = 74;
-        int test2 = 87;
-        int test3 = 82;
+        final int HOMEWORK1 = 88;
+        final int HOMEWORK2 = 91;
+        final int HOMEWORK3 = 0;
+        final int QUIZ1 = 84;
+        final int QUIZ2 = 89;
+        final int QUIZ3 = 93;
+        final int TEST1 = 74;
+        final int TEST2 = 87;
+        final int TEST3 = 82;
 
-        double averageHomework = (homework1 + homework2 + homework3);
+        double averageHomework = (HOMEWORK1 + HOMEWORK2 + HOMEWORK3);
         double averageHomework2 = averageHomework/3;
-        double homeworkWeight = 0.15;
-        double finalHomework = averageHomework2 * homeworkWeight;
-        double averageQuiz = (quiz1 + quiz2 + quiz3);
+        final double HOMEWORK_WEIGHT = 0.15;
+        double finalHomework = averageHomework2 * HOMEWORK_WEIGHT;
+        double averageQuiz = (QUIZ1 + QUIZ2 + QUIZ3);
         double averageQuiz2 = averageQuiz/3;
-        double quizWeight = 0.35;
-        double finalQuiz = averageQuiz2 * quizWeight;
-        double averageTest = (test1 + test2 + test3);
+        final double QUIZ_WEIGHT = 0.35;
+        double finalQuiz = averageQuiz2 * QUIZ_WEIGHT;
+        double averageTest = (TEST1 + TEST2 + TEST3);
         double averageTest2 = averageTest/3;
-        double testWeight = 0.5;
-        double finalTest = testWeight * averageTest2;
+        final double TEST_WEIGHT = 0.5;
+        double finalTest = TEST_WEIGHT * averageTest2;
         double finalGrade = Math.round((finalHomework + finalTest + finalQuiz)*100.0)/100.0;
         System.out.println(finalGrade + "%\n");
 
@@ -95,14 +95,31 @@ public class ProblemSet1 {
          * will I make this week?
          */
 
-
+         final double HOURLY_WAGE = 12.50;
+         final double MONDAY_HOUR = 7.5;
+         final double TUESDAY_HOUR = 8;
+         final double WEDNESDAY_HOUR = 10.5;
+         final double THURSDAY_HOUR = 9.5;
+         final double FRIDAY_HOUR = 6;
+         final double SATURDAY_HOUR = 11.5;
+         final double SUNDAY_HOUR = 0;
+         double totalWage = Math.round(HOURLY_WAGE*(MONDAY_HOUR+TUESDAY_HOUR+WEDNESDAY_HOUR+THURSDAY_HOUR+FRIDAY_HOUR+SATURDAY_HOUR+SUNDAY_HOUR)*100.0)/100.0;
+         NumberFormat currencyformat = NumberFormat.getCurrencyInstance();
+         System.out.printf(currencyformat.format(totalWage) + ".\n");
 
         /*
          * Exercise 6.
          *
          * What is my take-home pay each check?
          */
-
+         final double SALARY = 117000;
+         double biweekly = 117000/24;
+         final double FEDERAL_TAX = 0.76;
+         final double STATE_TAX = 0.9363;
+         final double CONTRIBUTION = 0.93;
+         double salaryContribution = CONTRIBUTION * biweekly;
+         double finalSalary = STATE_TAX * FEDERAL_TAX * salaryContribution;
+         System.out.printf("\n" + currencyformat.format(finalSalary) + ".\n");
 
 
         /*
