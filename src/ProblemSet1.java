@@ -142,7 +142,10 @@ public class ProblemSet1 {
          * What is the surface area of a standard Cornhole board?
          */
 
-
+         final double CORNHOLE_LENGTH = 24;
+         final double CORNHOLE_WIDTH = 48;
+         final double CORNHOLE_DIAMETER = 6;
+         double surfaceArea = (CORNHOLE_LENGTH * CORNHOLE_WIDTH) - (Math.PI * Math.pow((CORNHOLE_DIAMETER / 2), 2));
 
         /*
          * Exercise 9.
@@ -158,7 +161,10 @@ public class ProblemSet1 {
          *
          * What is the wind chill?
          */
-
+         double temperature = 38;
+         double windSpeed = 14;
+         double windChill = 35.74 + (0.6215 * temperature) + (((.4275 * temperature) - 35.75* Math.pow(windSpeed, .16)));
+         System.out.printf("\n%.1f %s", windChill, "degrees.");
 
 
     }
