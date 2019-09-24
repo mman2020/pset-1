@@ -134,7 +134,7 @@ public class ProblemSet1 {
          int PEOPLE_COUNT = STUDENT_COUNT + TEACHER_COUNT;
          int BUS_COUNT = (PEOPLE_COUNT/BUS_CAPACITY)+1;
          int finalBusCount = PEOPLE_COUNT % BUS_CAPACITY;
-         System.out.println("\n" + BUS_COUNT + " buses are needed, with " + finalBusCount + " passengers on the last bus. \n");
+         System.out.println("\n" + BUS_COUNT + " buses are needed, with " + finalBusCount + " passengers on the last bus.");
 
         /*
          * Exercise 8.
@@ -146,13 +146,22 @@ public class ProblemSet1 {
          final double CORNHOLE_WIDTH = 48;
          final double CORNHOLE_DIAMETER = 6;
          double surfaceArea = (CORNHOLE_LENGTH * CORNHOLE_WIDTH) - (Math.PI * Math.pow((CORNHOLE_DIAMETER / 2), 2));
+         System.out.printf("\n%.2f %s\n", surfaceArea, "square inches. \n");
 
         /*
          * Exercise 9.
          *
          * Are the years 2020, 2100, and 2400 leap years?
          */
-
+         final double CURRENT_YEAR = 2020;
+         final double NEXT_YEAR = 2100;
+         final double FINAL_YEAR = 2400;
+         boolean leapYear = ((CURRENT_YEAR % 4) == 0) && (((CURRENT_YEAR % 100) !=0) || ((CURRENT_YEAR % 400) == 0));
+         System.out.println("2020 is a leap year..." + leapYear + ".");
+         leapYear = ((NEXT_YEAR % 4) == 0) && (((NEXT_YEAR % 100) !=0) || ((NEXT_YEAR % 400) == 0));
+         System.out.println("2100 is a leap year..." + leapYear + ".");
+         leapYear = ((FINAL_YEAR % 4) == 0) && (((FINAL_YEAR % 100) !=0) || ((FINAL_YEAR % 400) == 0));
+         System.out.println("2020 is a leap year..." + leapYear + ".");
 
 
 
